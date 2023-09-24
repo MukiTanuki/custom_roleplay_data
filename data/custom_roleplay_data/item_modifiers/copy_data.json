@@ -1,0 +1,16 @@
+[
+	{
+		"function": "minecraft:copy_nbt",
+		"source": {
+			"type": "storage",
+			"source": "custom_roleplay_data:data"
+		},
+		"ops": [
+			{
+				"source": "CustomModelData",
+				"target": "CustomModelData",
+				"op": "replace"
+			}
+		]
+	}
+]
