@@ -4,21 +4,17 @@
 # Entity @s:	none
 #
 # Sets a tag marker for items so they don't overwrite existing CustomModelData
-#execute unless data entity @s SelectedItem.tag.CustomModelData \
-    if entity @s[nbt=!{SelectedItem:{ tag:{ CustomRoleplayData:1b } }}] run \
+execute if items entity @s weapon.mainhand *\
+    [\
+        !minecraft:custom_model_data,\
+        !minecraft:custom_data={CustomRoleplayData:1b}\
+    ] run \
     item modify entity @s weapon.mainhand custom_roleplay_data:marker_nbt
-execute unless items entity @s weapon.mainhand *[minecraft:custom_model_data] \
-    unless items entity @s weapon.mainhand *[minecraft:custom_data={CustomRoleplayData:1b}] run \
-    item modify entity @s weapon.mainhand custom_roleplay_data:marker_nbt
-#execute if data entity @s SelectedItem.tag.CustomModelData \
-    if entity @s[nbt=!{SelectedItem:{ tag:{ CustomRoleplayData:1b } }}] run \
-    title @s actionbar \
-        {\
-            "text": "Can't set CustomModelData for this item!", \
-            "color": "red"\
-        }
-execute if items entity @s weapon.mainhand *[minecraft:custom_model_data] \
-    unless items entity @s weapon.mainhand *[minecraft:custom_data={CustomRoleplayData:1b}] run \
+execute if items entity @s weapon.mainhand *\
+    [\
+        minecraft:custom_model_data,\
+        !minecraft:custom_data={CustomRoleplayData:1b}\
+    ] run \
     title @s actionbar \
         {\
             "text": "Can't set CustomModelData for this item!", \
