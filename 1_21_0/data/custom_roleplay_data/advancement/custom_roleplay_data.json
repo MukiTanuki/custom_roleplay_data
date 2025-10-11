@@ -6,7 +6,7 @@
 		"title": "Custom Roleplay Data",
 		"frame": "challenge",
 		"description": ["",{"text":"Adds the ability to change the CustomModelData of items in order to change item textures via resource packs.  ","color":"gold"},{"text":"Datapack by: ","color":"green"},{"text":"MukiTanuki\n","color":"aqua"},{"text":"Enter","color":"green"},{"text":" ","color":"gold"},{"text":"/trigger CustomModelData set #","color":"yellow"},{"text":" to set model data.\n","color":"gold"},{"text":"Enter","color":"green"},{"text":" ","color":"gold"},{"text":"/function custom_roleplay_data:admin","color":"yellow"},{"text":" and use auto-complete to set config options.","color":"gold"}],
-		"background": "minecraft:textures/block/black_concrete.png",
+		"background": "minecraft:block/black_concrete",
 		"show_toast": false,
 		"announce_to_chat": false
 	},
