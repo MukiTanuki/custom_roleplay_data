@@ -1,6 +1,0 @@
-[
-	{
-		"function": "minecraft:set_nbt",
-		"tag": "{CustomRoleplayData:1b}"
-	}
-]
