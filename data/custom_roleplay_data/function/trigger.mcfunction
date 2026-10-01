@@ -1,0 +1,6 @@
+# Rejects pre-existing model data, checks XP, then atomically claims and updates eligible items.
+execute if items entity @s weapon.mainhand *[minecraft:custom_model_data,!minecraft:custom_data~{CustomRoleplayData:1b}] run title @s actionbar {"text":"Can't set CustomModelData for this item!","color":"red"}
+execute if items entity @s weapon.mainhand *[!minecraft:custom_model_data] unless score @s crd_xp >= #min_level crd_xp_dummy run title @s actionbar [{"text":"Requires at least ","color":"red"},{"score":{"name":"#min_level","objective":"crd_xp_dummy"},"color":"aqua"},{"text":" level(s)!","color":"red"}]
+execute if items entity @s weapon.mainhand *[minecraft:custom_data~{CustomRoleplayData:1b}] unless score @s crd_xp >= #min_level crd_xp_dummy run title @s actionbar [{"text":"Requires at least ","color":"red"},{"score":{"name":"#min_level","objective":"crd_xp_dummy"},"color":"aqua"},{"text":" level(s)!","color":"red"}]
+execute if items entity @s weapon.mainhand *[minecraft:custom_model_data,minecraft:custom_data~{CustomRoleplayData:1b}] if score @s crd_xp >= #min_level crd_xp_dummy run function custom_roleplay_data:set_data
+execute if items entity @s weapon.mainhand *[!minecraft:custom_model_data] if score @s crd_xp >= #min_level crd_xp_dummy run function custom_roleplay_data:set_data
